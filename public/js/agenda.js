@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             formulario.start.value = info.dateStr;
             formulario.end.value = info.dateStr;
+            //formulario.timestart.value = info.dateStr;
+            //formulario.timeend.value = info.dateStr;
+
             $("#evento").modal("show");
         },
         eventClick: function (info) {
@@ -41,6 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     formulario.descripcion.value = resposta.data.descripcion;
                     formulario.start.value = resposta.data.start;
                     formulario.end.value = resposta.data.end;
+                    formulario.timestart.value = resposta.data.timestart;
+                    formulario.timeend.value = resposta.data.timeend;
                     $("#evento").modal("show");
                 })
                 .catch((error) => {

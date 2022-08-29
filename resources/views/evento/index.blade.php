@@ -39,15 +39,27 @@
             <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
           </div>
 
-          <div class="form-group d-none">
+          <div class="form-group">
             <label for="start">start</label>
             <input type="date" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="2020-08-22">
             <small id="helpId" class="form-text text-muted">Help text</small>
           </div>
 
-          <div class="form-group d-none">
+          <div class="form-group">
             <label for="end">end</label>
             <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="2020-08-23">
+            <small id="helpId" class="form-text text-muted">Help text</small>
+          </div>
+
+          <div class="form-group">
+            <label for="timestart">Horário Inicial</label>
+            <input type="time" class="form-control" name="timestart" id="timestart" aria-describedby="helpId" placeholder="">
+            <small id="helpId" class="form-text text-muted">Help text</small>
+          </div>
+
+          <div class="form-group">
+            <label for="timeend">Horário Final</label>
+            <input type="time" class="form-control" name="timeend" id="timeend" aria-describedby="helpId" placeholder="">
             <small id="helpId" class="form-text text-muted">Help text</small>
           </div>
         </form>

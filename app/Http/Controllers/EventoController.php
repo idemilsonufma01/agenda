@@ -39,6 +39,7 @@ class EventoController extends Controller
     {
         request() ->validate(Evento::$rules);
         $evento = Evento::create($request->all());
+        
     }
 
     /**
@@ -50,6 +51,7 @@ class EventoController extends Controller
     public function show(Evento $evento)
     {
         $evento = Evento::all();
+        //console.log($evento);
         return response()->json($evento);
     }
 
@@ -63,7 +65,9 @@ class EventoController extends Controller
     {
         $evento = Evento::find($id);
         $evento->start = Carbon::createFromFormat('Y-m-d H:i:s', $evento->start)->format('Y-m-d');
+        //$evento->start = Carbon::createFromFormat('Y-m-d H:i:s', $evento->timestart)->format('H:i:s');
         $evento->end = Carbon::createFromFormat('Y-m-d H:i:s', $evento->end)->format('Y-m-d');
+        //$evento->end = Carbon::createFromFormat('Y-m-d H:i:s', $evento->timeend)->format('H:i:s');
         return response()->json($evento);
     }
 

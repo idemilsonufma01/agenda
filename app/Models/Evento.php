@@ -11,11 +11,14 @@ class Evento extends Model
     static $rules = [
         'title' => 'required',
         'descripcion' => 'required',
+        'quant_participante' =>'required',
         'start' => 'required',
         'end' => 'required',
         'timestart'=> 'required',
         'timeend'=> 'required'
     ];
 
-    protected $fillable = ['title','descripcion','start', 'end','timestart','timeend'];
+    protected $table = 'eventos';
+    protected $fillable = ['title','descripcion','quant_participante','link','start','end','timestart','timeend'];
 }
+

@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/presenca.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -50,8 +51,12 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
+                        <li>
+                            <a class="nav-link" href="{{route('site.presenca')}}">{{ __('Presença Evento') }}</a>
+                        </li>
                         @guest
-                            @if (Route::has('login'))
+
+                                                    @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
@@ -81,7 +86,10 @@
                                 </div>
                             </li>
                         @endguest
+
+                        
                     </ul>
+                    
                 </div>
             </div>
         </nav>

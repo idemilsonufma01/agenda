@@ -38,6 +38,15 @@
             <label for="descripcion">Descrição do evento</label>
             <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
           </div>
+          <div class="form-group">
+            <label for="quant_participante">Quantidade de Participante</label>
+            <input type="number" class="form-control" name="quant_participante" id="quant_participante" aria-describedby="helpId" >
+          </div>
+
+          <div class="form-group">
+            <label for="link">Link</label>
+            <input type="url" class="form-control" name="link" id="link" aria-describedby="helpId" placeholder="Não obrigatório">
+          </div>
 
           <div class="form-group">
             <label for="start">start</label>
@@ -64,6 +73,8 @@
           </div>
         </form>
       </div>
+
+    
       <div class="modal-footer">
         <button type="button" class="btn btn-success" id="btnSalvar">Salvar</button>
         <button type="button" class="btn btn-warning" id="btnAtualizar">Atualizar</button>

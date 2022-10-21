@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         headerToolbar: {
             left: "prev,next today",
             center: "title",
-            right: "dayGridMonth,timeGridWeek",
+            right: "dayGridMonth",
         },
 
         //events: baseURL + "/evento/mostrar",
@@ -28,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             formulario.start.value = info.dateStr;
             formulario.end.value = info.dateStr;
-            //formulario.timestart.value = info.dateStr;
-            //formulario.timeend.value = info.dateStr;
 
             $("#evento").modal("show");
         },
@@ -42,6 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     formulario.id.value = resposta.data.id;
                     formulario.title.value = resposta.data.title;
                     formulario.descripcion.value = resposta.data.descripcion;
+                    formulario.quant_participante.value =
+                        resposta.data.quant_participante;
+                    formulario.link.value = resposta.data.link;
                     formulario.start.value = resposta.data.start;
                     formulario.end.value = resposta.data.end;
                     formulario.timestart.value = resposta.data.timestart;

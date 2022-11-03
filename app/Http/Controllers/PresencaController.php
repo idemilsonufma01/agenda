@@ -63,10 +63,10 @@ class PresencaController extends Controller
      * @param  \App\Models\Participante  $presenca
      * @return \Illuminate\Http\Response
      */
-    public function edit(Participante $participante)
+    public function edit($id)
     {
-        //
-        return view('site.presenca.editardados');
+        $participante = Participante::find($id);
+        return view('site.presenca.editardados',['participante'=>$participante]);
     }
 
     /**
@@ -76,9 +76,26 @@ class PresencaController extends Controller
      * @param  \App\Models\Participante  $presenca
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Participante $participante)
+    public function adicionar(Request $request)
     {
-        //
+        //edição
+        //if($request->input('_token') !=  ' '  &&  $request->input('id')   != ''){
+
+           $participante = Participante::find($request->input('id'));
+
+            dd($participante);
+            /*
+            $participante  -> update($request->all());
+            $update = $participante->update($request->all());
+
+            if($update){
+                echo 'Update realizado com sucesso';
+            } else {
+                echo 'Update apresentou problema';
+            }
+            */
+
+       // }
     }
 
     /**
@@ -92,17 +109,8 @@ class PresencaController extends Controller
         //
     }
 
-    public function listar(Request $request){
-        $participante = Participante::where('cpf','like', '%'.$request->input('cpf').'%')
-            ->where('nome','like', '%'.$request->input('nome').'%')
-            ->where('email','like', '%'.$request->input('email').'%')
-            ->where('telefone','like', '%'.$request->input('telefone').'%')
-            ->where('vinculo','like', '%'.$request->input('vinculo').'%')
-            ->where('cargo','like', '%'.$request->input('cargo').'%')
-            ->where('setor','like', '%'.$request->input('setor').'%')
-            ->get();
-
-        dd($participante);
-        return view('site.presenca.listar');
+    public function mostrar(Request $request){
+        $participante = Participante::where('cpf','like', '%'.$request->input('cpf').'%')->first();
+        return view('site.presenca.mostrar',['participante' => $participante]);
     }
 }

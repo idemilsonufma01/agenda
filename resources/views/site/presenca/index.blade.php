@@ -3,7 +3,7 @@
   
     <div class="container">
       <h1>Registro de Presença</h1>
-      <form  method="post"  class= "form-inline" action="{{route('presenca.listar')}}">
+      <form  method="post"  class= "form-inline" action="{{route('presenca.mostrar')}}">
                 @csrf
                 <select name = "selecione" class="form-select form-select-sm w-25 mr-2" >
                       <option>Selecione evento</option>
@@ -28,9 +28,8 @@
           </div>
           
           <br/><br/>
-          <a name="presenca" id="confirmar" class="btn btn-success" href="{{route('presenca.adicionar')}}" role="button">Confirmar presença</a>
-          <a name="presenca" id="editar" class="btn btn-warning" href="" onclick="verificar( )"role="button">Editar dados</a>
-       {{--{{route('presenca.edit')}}--}} 
+          <a name="presenca" id="confirmar" class="btn btn-success" href="#" role="button">Confirmar presença</a>
+          <a name="presenca" id="editar" class="btn btn-warning" href="#"  role="button">Editar dados</a>
       </form>
     </div>
   

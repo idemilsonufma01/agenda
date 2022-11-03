@@ -14,12 +14,13 @@ Route::get('/login{erro?}', [\App\Http\Controllers\LoginController::class,'index
 Route::post('/login', [\App\Http\Controllers\LoginController::class,'autenticar'])->name('site.login');
 Route::get('/eventopresenca', [\App\Http\Controllers\PresencaController::class,'index'])->name('site.presenca');
 Route::post('/eventopresenca', [\App\Http\Controllers\PresencaController::class,'index'])->name('site.presenca');
-Route::get('/eventopresenca/editar/', [\App\Http\Controllers\PresencaController::class,'edit'])->name('presenca.edit');
-Route::get('/eventopresenca/listar/', [\App\Http\Controllers\PresencaController::class,'listar'])->name('presenca.listar');
-Route::post('/eventopresenca/listar/', [\App\Http\Controllers\PresencaController::class,'listar'])->name('presenca.listar');
-Route::get('/eventopresenca/adicionar/', [\App\Http\Controllers\PresencaController::class,'store'])->name('presenca.adicionar');
-Route::post('/eventopresenca/adicionar/', [\App\Http\Controllers\PresencaController::class,'store'])->name('presenca.adicionar');
-Route::post('/eventopresenca/update/', [\App\Http\Controllers\PresencaController::class,'update'])->name('presenca.atualiza');
+Route::get('/eventopresenca/editar/{id}', [\App\Http\Controllers\PresencaController::class,'edit'])->name('presenca.edit');
+Route::get('/eventopresenca/mostrar/', [\App\Http\Controllers\PresencaController::class,'mostrar'])->name('presenca.mostrar');
+Route::post('/eventopresenca/mostrar/', [\App\Http\Controllers\PresencaController::class,'mostrar'])->name('presenca.mostrar');
+//Route::get('/eventopresenca/adicionar/', [\App\Http\Controllers\PresencaController::class,'store'])->name('presenca.adicionar');
+//Route::post('/eventopresenca/adicionar/', [\App\Http\Controllers\PresencaController::class,'store'])->name('presenca.adicionar');
+Route::get('/eventopresenca/adicionar/', [\App\Http\Controllers\PresencaController::class,'adicionar'])->name('presenca.adicionar');
+Route::post('/eventopresenca/adicionar/', [\App\Http\Controllers\PresencaController::class,'adicionar'])->name('presenca.adicionar');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index'])->name('evento.index');
